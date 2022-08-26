@@ -54,29 +54,34 @@ function DeckEdit(){
             </div>
             <h1>Edit Deck</h1>
             <form onSubmit={submitHandler}>
-                <label htmlFor="name">
+                <div className="d-flex my-4">
+                <label htmlFor="name" className="mx-2"> Name
                     <input
                     id="name"
                     type="text"
                     onChange={nameChangeHandler}
                     value={deck.name}
+                    className="form-control mt-2"
                     />
                 </label>
-                <label htmlFor="description">
-                    <input
+                <label htmlFor="description" className="mx-2"> Description
+                    <textarea
                     id="description"
                     type="text"
                     onChange={textChangeHandler}
-                    rows={5}
                     value={deck.description}
+                    className="form-control mt-2"
                     />
                 </label>
-<button onClick={cancelHandler} className="btn btn-secondary">
+                </div>
+                <div className="pt-2">
+<button onClick={cancelHandler} className="btn btn-secondary mx-2">
     Cancel
 </button>
-<button type="submit" className="btn btn-primary">
+<button type="submit" className="btn btn-primary mx-2">
     Save
 </button>
+</div>
             </form>
         </div>
     )

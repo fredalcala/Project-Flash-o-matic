@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { deleteDeck, readDeck } from "../utils/api";
-//import Study from "./Study";
 import CardList from "./CardList";
 
 
@@ -43,30 +42,28 @@ function DeckView() {
 
   return (
     <>
-      <div>
+      <div className="container">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <a href="/">Home</a>
+              <Link to={"/"}>Home</Link>
             </li>
-            <li className="breakcrumb-item active" aria-current="page">
+            <li className="breadcrumb-item active" aria-current="page">
               {deck.name}
             </li>
           </ol>
         </nav>
-      </div>
       <div className="card">
         <div className="card-body text-center">
-          <h3 className="card-title">{deck.name}</h3>
-          <p className="card-text">{deck.description}</p>
+          <h3 className="card-title mb-5">{deck.name}</h3>
+          <p className="card-text mb-3">{deck.description}</p>
         </div>
         <div className="card-body">
-          <p>{deck.description}</p>
-          <div className="d-flex justify-content-around">
+          <div className="row d-flex px-3 justify-content-between">
             <div>
               <Link to={`/decks/${deck.id}/edit`}>
                 <button
-                  className="btn btn-secondary"
+                  className="btn btn-secondary mx-2"
                   onClick={() => history.push(`/decks/${deck.id}/edit`)}
                 >
                   Edit
@@ -75,7 +72,7 @@ function DeckView() {
               <Link to={`/decks/${deck.id}/study`}>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-primary mx-2"
                   onClick={() => history.push(`/decks/${deck.id}/study`)}
                 >
                   Study
@@ -84,7 +81,7 @@ function DeckView() {
               <Link to={`/decks/${deck.id}/cards/new`}>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-primary mx-2"
                   onClick={() => history.push(`/decks/${deck.id}/cards/new`)}
                 >
                   Add Cards
@@ -94,7 +91,7 @@ function DeckView() {
             <div>
               <button
                 type="button"
-                className="btn btn-danger"
+                className="btn btn-danger mx-2"
                 onClick={()=> deleteHandler(deckId)}
               >
                 Delete Deck
@@ -104,8 +101,9 @@ function DeckView() {
         </div>
       </div>
       <br />
-      <h1>Cards</h1>
+      <h1 className="my-3">Cards</h1>
       <CardList cards={deck.cards} key={deck.id} />
+      </div>
     </>
   );
 }

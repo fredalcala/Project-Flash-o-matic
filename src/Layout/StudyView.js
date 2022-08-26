@@ -24,22 +24,22 @@ function StudyView({ card, studyIndex, cardsLength, setStudyIndex }) {
   }
 
   return (
-    <div className="card">
+    <div className="card p-3">
       <div className="card-body">
         <h5>
           Card {(studyIndex + 1)} of {cardsLength}
         </h5>
         {front ? <p>{card.front}</p> : <p>{card.back}</p>}
-        <button className="btn btn-secondary" onClick={flipHandler}>
+        <button className="btn btn-secondary mx-2" onClick={flipHandler}>
           Flip
         </button>
         {!front && 
-          <button className="btn btn-primary" onClick={nextCard}>
+          <button className="btn btn-primary mx-2" onClick={nextCard}>
             Next
           </button>
         }
         {finalCard && 
-          <button className="btn btn-primary" onClick={restart}>
+          <button className="btn btn-primary mx-2" onClick={restart}>
             Restart
           </button>
         }

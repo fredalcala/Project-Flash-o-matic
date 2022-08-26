@@ -11,15 +11,15 @@ function DeckFace({ deck, deleteHandler }) {
       <div className="card-body">
         <div className="d-flex justify-content-between">
         <h5 className="card-title">{deck.name}</h5>
-        <p>{`${deck.cards.length} cards`}</p>
+        <p className="text-secondary">{`${deck.cards.length} cards`}</p>
         </div>
-        <p className="card-text">{deck.description}</p>
+        <p className="card-text ml-2">{deck.description}</p>
         <div className="d-flex justify-content-between">
           <div>
             <Link to={`/decks/${deck.id}`}>
                 <button 
                 type="button"
-                className="btn btn-secondary"
+                className="btn btn-secondary mx-2"
                 onClick={(deck)=> history.push(`/decks/${deck.id}`)}>
                     View
                 </button>
@@ -27,7 +27,7 @@ function DeckFace({ deck, deleteHandler }) {
             <Link to={`/decks/${deck.id}/study`}>
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-primary mx-2"
                 onClick={(deck) => history.push(`/decks/${deck.id}/study`)}
               >
                 Study
@@ -37,7 +37,7 @@ function DeckFace({ deck, deleteHandler }) {
           <div>
             <button
               type="button"
-              className="btn btn-danger"
+              className="btn btn-danger mx-2"
               onClick={deleteHandler}
             >
               Delete Deck

@@ -31,33 +31,35 @@ function CardForm({
       </div>
       <h3>{card.id ? "Edit Card" : `${deck.name}: Add Card`}</h3>
       <form onSubmit={submitHandler}>
-        <label htmlFor="front">
+        <div className="d-flex my-4">
+        <label htmlFor="front" className="mx-2">
           Front
           <textarea
             id="front"
             type="text"
             onChange={frontChangeHandler}
             value={card.front}
-            rows={4}
+            className="form-control mt-2"
           />
         </label>
-        <label htmlFor="back">
+        <label htmlFor="back" className="mx-2">
           Back
           <textarea
             id="back"
             type="text"
             onChange={backChangeHandler}
             value={card.back}
-            rows={4}
+            className="form-control mt-2"
           />
         </label>
+        </div>
         {card.id ? (
-          <div>
+          <div className="my-2">
             <button
               onClick={() => {
                 history.push(`/decks/${card.deckId}`);
               }}
-              className="btn btn-secondary"
+              className="btn btn-secondary mr-2"
             >
               Cancel
             </button>
@@ -66,16 +68,16 @@ function CardForm({
             </button>
           </div>
         ) : (
-          <div>
+          <div className= "my-2">
             <button
               onClick={() => {
                 history.push(`/decks/${deckId}`);
               }}
-              className="btn btn-secondary"
+              className="btn btn-secondary mx-2"
             >
               Done
             </button>
-            <button onClick={createHandler} className="btn btn-primary">
+            <button onClick={createHandler} className="btn btn-primary mx-2">
               Save
             </button>
           </div>

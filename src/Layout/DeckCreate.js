@@ -41,31 +41,36 @@ function DeckCreate() {
       </div>
       <h1>Create Deck</h1>
       <form>
-        <label htmlFor="name">
+        <div className="d-flex my-4">
+        <label htmlFor="name" className="mx-2">
           Name
           <input
             id="name"
             type="text"
             placeholder="Deck Name"
             onChange={nameChangeHandler}
+            className="form-control mt-2"
           />
         </label>
-        <label htmlFor="description">
+        <label htmlFor="description" className="mx-2">
           Description
           <textarea
             id="description"
             type="text"
-            rows={5}
             placeholder="Description of the deck"
             onChange={textChangeHandler}
+            className="form-control mt-2"
           />
         </label>
-        <button onClick={()=>{history.push(`/`)}} className="btn btn-secondary" >
+        </div>
+        <div className="pt-2">
+        <button onClick={()=>{history.push(`/`)}} className="btn btn-secondary mx-2" >
           Cancel
         </button>
-        <button onClick={handleCreate} className="btn btn-primary">
+        <button onClick={handleCreate} className="btn btn-primary mx-2">
           Create
         </button>
+        </div>
       </form>
     </div>
   );

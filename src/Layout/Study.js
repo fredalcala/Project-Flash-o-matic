@@ -43,7 +43,7 @@ function Study({deck, setDeck}) {
             </li>
           </ol>
         </nav>
-        <h3>Study: {deck.name}</h3>
+        <h3 className="mb-4">Study: {deck.name}</h3>
         {deck.cards && deck.cards.length > 2 &&
         <StudyView
         card={deck.cards[studyIndex]}

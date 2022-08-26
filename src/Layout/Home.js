@@ -11,7 +11,7 @@ function Home({decks, setDecks, setDeck}) {
 
     return (
         <div>
-            <button type= "button" className="btn btn-secondary" onClick={handleCreateDeck}>
+            <button type= "button" className="btn btn-secondary mx-2 mb-2" onClick={handleCreateDeck}>
             Create Deck
             </button>
             <DeckList decks={decks} setDecks={setDecks} setDeck={setDeck} />
