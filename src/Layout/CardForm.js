@@ -78,7 +78,7 @@ function CardForm({
               Done
             </button>
             <button onClick={createHandler} className="btn btn-primary mx-2">
-              Save
+              Add Card
             </button>
           </div>
         )}
