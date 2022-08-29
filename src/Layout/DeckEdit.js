@@ -42,6 +42,7 @@ function DeckEdit(){
     }
 
     return (
+        deck.id ?
         <div>
             <div>
                 <nav aria-label="breadcrumb">
@@ -84,6 +85,20 @@ function DeckEdit(){
 </div>
             </form>
         </div>
+        :
+        <div>
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><Link to={"/"}>Home</Link></li>
+                        <li className="breadcrumb-item"><Link to={`/decks/${deck.id}`}>{deck.name}</Link></li>
+                        <li className="breadcrumb-item active" aria-current="page">Edit</li>
+                    </ol>
+                </nav>
+            </div>
+            <h1>Edit Deck</h1>
+            <p>Loading...</p>
+            </div>
     )
 }
 

@@ -84,7 +84,7 @@ function DeckView() {
                   className="btn btn-primary mx-2"
                   onClick={() => history.push(`/decks/${deck.id}/cards/new`)}
                 >
-                  Add Cards
+                  Add Card
                 </button>
               </Link>
             </div>
